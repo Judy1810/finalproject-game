@@ -169,7 +169,7 @@
             addToConversationHistory('user', message);
             displayMessage(message, 'user');
             inputElement.disabled = true;
-            fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key='AIzaSyCaNn9ILR6Wve2H8e4NjfDYD9hjPP0_rbc, {
+            fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${AIzaSyCaNn9ILR6Wve2H8e4NjfDYD9hjPP0_rbc}`, {
                 method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json'
@@ -260,14 +260,14 @@
         typeText(messageElement, formatMessage, 0);
     }
 
-    function updateSceneImage(responseText){
+    function updateSceneImage(responseText) {
         let sceneMatch = responseText.match(/場景：(.*?)\s/); // 使用正則表達式匹配場景描述
-        if (sceneMatch && sceneMatch[1]){
+        if (sceneMatch && sceneMatch[1]) {
             let scene = sceneMatch[1];
             console.log(scene);
             //檢查scene是否包含"房間"
             if (scene.includes("房間")) {
-                document.getElementById('backgroundWrapper').style.backgrounfImage = "https://tengrai-generated.s3-accelerate.amazonaws.com/google-oauth2%7C104212242817498863208/a02f6455-aea6-4f5f-8310-8cdf2dd5e17e/tengrai_image_1716203818_536567.png('./img/room.jpeg')";
+                document.getElementById('backgroundWrapper').style.backgroundImage = "https://tengrai-generated.s3-accelerate.amazonaws.com/google-oauth2%7C104212242817498863208/a02f6455-aea6-4f5f-8310-8cdf2dd5e17e/tengrai_image_1716203818_536567.png('./img/room.jpeg')";
             } else if(scene.includes("咖啡店")) {
                 document.getElementById('backgroundWrapper').style.backgroundImage = "https://tengrai-generated.s3-accelerate.amazonaws.com/google-oauth2%7C104212242817498863208/7a51946c-c562-4b6e-961c-41756a7edde5/tengrai_image_1716204611_565377.png('./img/coffeeshop.jpeg')";
             } else if(scene.includes("音樂製作人的辦公室")) {
@@ -361,7 +361,7 @@
                         根據我的選擇進行故事就好，不要幫我做出選擇`
             }]
         })
-        fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key='AIzaSyCaNn9ILR6Wve2H8e4NjfDYD9hjPP0_rbc, {
+        fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${AIzaSyCaNn9ILR6Wve2H8e4NjfDYD9hjPP0_rbc}`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
