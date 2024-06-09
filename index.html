@@ -169,7 +169,7 @@
             addToConversationHistory('user', message);
             displayMessage(message, 'user');
             inputElement.disabled = true;
-            fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${AIzaSyCaNn9ILR6Wve2H8e4NjfDYD9hjPP0_rbc}`, {
+            fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyCaNn9ILR6Wve2H8e4NjfDYD9hjPP0_rbc`, {
                 method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json'
@@ -267,11 +267,11 @@
             console.log(scene);
             //檢查scene是否包含"房間"
             if (scene.includes("房間")) {
-                document.getElementById('backgroundWrapper').style.backgroundImage = "https://drive.google.com/file/d/1v51532TyvTF5svUHs3qZamqihqO4GBtp/view?usp=drive_link('./img/room.jpeg')";
+                document.getElementById('backgroundWrapper').style.backgroundImage = "url('./img/room.jpeg')";
             } else if(scene.includes("咖啡店")) {
-                document.getElementById('backgroundWrapper').style.backgroundImage = "https://drive.google.com/file/d/1wMfmi4GRPb5-7XOOz39sdWjLWHa-WN1G/view?usp=drive_link('./img/coffeeshop.jpeg')";
+                document.getElementById('backgroundWrapper').style.backgroundImage = "url('./img/coffeeshop.jpeg')";
             } else if(scene.includes("音樂製作人的辦公室")) {
-                document.getElementById('backgroundWrapper').style.backgroundImage = "https://drive.google.com/file/d/10ns0YTDQA1GDnN_0IMCABChZ03lWu5hf/view?usp=drive_link('./img/office.jpeg')";
+                document.getElementById('backgroundWrapper').style.backgroundImage = "url('./img/office.jpeg')";
             }
         }
     }
@@ -294,7 +294,7 @@
     
     document.getElementById('startButton').addEventListener('click', function () {
         // Change background image and display settings when starting the game
-        document.getElementById('backgroundWrapper').style.backgroundImage = "https://drive.google.com/file/d/1v51532TyvTF5svUHs3qZamqihqO4GBtp/view?usp=drive_link('./img/room.jpeg')";
+        document.getElementById('backgroundWrapper').style.backgroundImage = "url('./img/room.jpeg')";
         document.getElementById('introBlock').style.display = 'none'; // Show the game container
         document.getElementById('gameContainer').style.display = 'inline';
         document.getElementById('introButton').style.display = 'none'; // Hide the start button
@@ -361,7 +361,7 @@
                         根據我的選擇進行故事就好，不要幫我做出選擇`
             }]
         })
-        fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${AIzaSyCaNn9ILR6Wve2H8e4NjfDYD9hjPP0_rbc}`, {
+        fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyCaNn9ILR6Wve2H8e4NjfDYD9hjPP0_rbc`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
